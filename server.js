@@ -1,5 +1,20 @@
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+
+//connecting to the database
+//port number for mongodb is 27017
+mongoose.connect('mongodb://localhost:27017/test')
+.then(()=>{
+    console.log('Connected to database');
+})
+
+//error catcher
+.catch(err =>{
+    console.log('Not connected to database')
+})
+
+
 
 //web application getting something from the server
 //req = request //res = response //=>'fat arrow' = function
